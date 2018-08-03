@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.cover {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url()  center center no-repeat;
+  background-size: cover;
+  filter: blur(1px);
+}
+
+.musicbox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: arial;
+  font-size: 16px;
+  color: #f06d6a;
+  width: 340px;
+}
+
+.music-panel {
+  border: 1px solid #76dba3;
+  padding: 20px 20px 5px 20px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1), 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.musicbox .control {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #ee8a87;
+  float: left;
+}
+
+.musicbox .control .fa {
+  margin-right: 12px;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+.musicbox .control .fa:hover {
+  color: #f4c55d;
+}
+
+.musicbox .control .fa.disable {
+  opacity: 0.3;
+}
+
+.musicbox .info {
+  margin-left: 120px;
+}
+
+.musicbox .info .title {
+  font-size: 18px;
+}
+
+.musicbox .info .author {
+  font-size: 13px;
+}
+
+.musicbox .progress {
+  width: 260px;
+}
+
+/* 总进度条 */
+.musicbox .progress .bar {
+  height: 3px;
+  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* 实时进度条 */
+.musicbox .progress .progress-now {
+  background-color: #ee8a87;
+  height: 3px;
+  width: 0;
+  position: relative;
+}
+
+.musicbox::after,
+.musicbox .music::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.musicbox .time {
+  text-align: right;
+}
+
+.musicbox .list {
+  list-style: none;
+}
+.musicbox .list>li{
+  position: relative;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-top: none;
+  overflow: hidden;  /* 溢出隐藏 */
+  cursor: pointer;
+}
+.musicbox .list>li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.musicbox .list>li.playing::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.8);
+}
