@@ -70,6 +70,7 @@ console.log(audioObject.currentTime)
 ```
 #### 10. audioObject.ended
 判断音乐是否播放完毕，只读属性
+
 <br>
 ### 事件
 #### 1. `playing`
@@ -124,11 +125,13 @@ audioObject.onvolumechange = function(){
   console.log('volumechange')
 }
 ```
+
 <br>
 ## Demo
 ![](https://upload-images.jianshu.io/upload_images/12904618-1b59181248d01087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **[效果预览](https://evenyao.github.io/music-player/)**
+
 <br>
 ## 版本
 - 2018.8.4 -- v1.0
