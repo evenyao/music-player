@@ -126,13 +126,13 @@ audioObject.onvolumechange = function(){
 }
 ```
   
-  
+<br /> 
 ## Demo
 ![](https://upload-images.jianshu.io/upload_images/12904618-1b59181248d01087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **[效果预览](https://evenyao.github.io/music-player/)**
   
-  
+<br />  
 ## 版本
 - 2018.8.4 -- v1.0
 - 2018.8.5 -- v1.1 增加了调整音量、静音/恢复音量的功能; 修复了JSON文件mock数据错误的bug。
