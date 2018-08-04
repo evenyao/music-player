@@ -9,7 +9,7 @@ function $$(selectorAll){
 function getMusicList(callback){
   //ajax获取数据
   var xhr = new XMLHttpRequest()
-  xhr.open('GET','/music-player/music.json',true)
+  xhr.open('GET','/music.json',true)
   xhr.onload = function(){
     if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304){
       // console.log(JSON.parse(this.responseText))
@@ -74,6 +74,56 @@ audio.onended = function(){  //监听单曲播放完毕之后的事件 即和下
   currentIndex = (++currentIndex)%musicList.length  //使音乐永远循环列表的表达式
   loadMusic(musicList[currentIndex])  //播放下一曲
 }
+
+
+var nowVol = audio.volume  //先定义一个变量nowVol表示当前音量
+// 设置调整音量大小事件
+// 音量提升
+$('.musicbox .up').onclick = function(){
+  if(audio.volume < 1){
+    audio.volume = audio.volume + 0.2
+    console.log('当前音量: ' + audio.volume)
+    nowVol = audio.volume  //返还值给当前音量，便于静音恢复的时候调用
+    $('.musicbox .volume').querySelector('.fa').classList.remove('fa-volume-off')
+    $('.musicbox .volume').querySelector('.fa').classList.add('fa-volume-up')
+    //当音量从最小升高时，静音icon会消失
+  }else{
+    console.log('当前音量已达最大')
+  }
+}
+
+// 音量降低
+$('.musicbox .down').onclick = function(){
+  if(audio.volume > 0.4){
+    audio.volume = audio.volume - 0.2
+    console.log('当前音量: ' + audio.volume)
+    nowVol = audio.volume  //返还值给当前音量，便于静音恢复的时候调用
+  }else{
+    audio.volume = audio.volume - 0.20000000000000007
+    console.log(audio.volume)
+    console.log('当前音量已达最小')  //当音量达到最小时，静音icon也会出现
+    $('.musicbox .volume').querySelector('.fa').classList.remove('fa-volume-up')
+    $('.musicbox .volume').querySelector('.fa').classList.add('fa-volume-off')
+  }
+}
+
+// 设置静音按钮事件
+$('.musicbox .volume').onclick = function(){
+  // 判断，如果是非静音状态，变为静音
+  if(audio.volume !== 0){
+    audio.volume = 0
+    this.querySelector('.fa').classList.remove('fa-volume-up')
+    this.querySelector('.fa').classList.add('fa-volume-off')
+    console.log('当前音量: ' + audio.volume)
+  }else{
+    // 如果是静音状态，恢复之前的音量
+    audio.volume = nowVol
+    this.querySelector('.fa').classList.remove('fa-volume-off')
+    this.querySelector('.fa').classList.add('fa-volume-up')
+    console.log('当前音量: ' + audio.volume)
+  }
+}
+
 
 //设置播放器按钮事件
 $('.musicbox .play').onclick = function(){

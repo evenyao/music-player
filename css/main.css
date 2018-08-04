@@ -71,6 +71,33 @@ body {
   font-size: 13px;
 }
 
+.musicbox .vol {
+  position: absolute;
+  left: 315px;
+  top: 3px;
+}
+
+.musicbox .vol .fa-volume-up,
+.musicbox .vol .fa-volume-off {
+  font-size: 20px
+}
+
+.musicbox .vol .up {
+  position: absolute;
+  left: -20px;
+  top: 2px;
+}
+
+.musicbox .vol .down {
+  position: absolute;
+  left: 2px;
+  top: 20px
+}
+
+.musicbox .vol .fa:hover {
+  color: #f4c55d;
+}
+
 .musicbox .progress {
   width: 260px;
 }
