@@ -6,7 +6,7 @@
 
 **方法1:**
 ```html
-<audio id="music" src="http://xxx.mp3">你的浏览器不支持喔！</audio>
+<audio id="music" src="http://xxx.mp3"></audio>
 <script>
 var audioObject = document.querySelector('#music')
 </script>
