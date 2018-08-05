@@ -126,8 +126,6 @@ audioObject.onvolumechange = function(){
 ```
 
 ## Demo
-![](https://upload-images.jianshu.io/upload_images/12904618-1b59181248d01087.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 **[效果预览](https://evenyao.github.io/music-player/)**
 
 ## 版本
