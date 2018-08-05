@@ -72,6 +72,7 @@ body {
 }
 
 .musicbox .vol {
+  cursor: pointer;
   position: absolute;
   left: 315px;
   top: 3px;
@@ -82,21 +83,36 @@ body {
   font-size: 20px
 }
 
-.musicbox .vol .up {
+/* v1.2版本新增的音量条方案css */
+.musicbox .vol-bar  {
+  margin-top: 5px;
+  cursor: pointer;
+  width: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 50px;
+  transform: rotate(180deg);
+  /* 旋转180度，让低音量在下，高音量在上 */
+}
+.musicbox .volume-now  {
+  width: 3px;
+  background-color: #ee8a87;
+  height: 50px;
+}
+
+/* v1.2 弃用的音量加减按钮css */
+/* .musicbox .vol .up {
   position: absolute;
   left: -20px;
   top: 2px;
 }
-
 .musicbox .vol .down {
   position: absolute;
   left: 2px;
   top: 20px
 }
-
 .musicbox .vol .fa:hover {
   color: #f4c55d;
-}
+} */
 
 .musicbox .progress {
   width: 260px;
